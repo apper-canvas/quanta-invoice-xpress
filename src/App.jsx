@@ -29,7 +29,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative px-4 sm:px-6">
       {/* Theme Toggle Button */}
       <motion.button
         className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-surface-200 dark:bg-surface-700 shadow-lg"
@@ -44,13 +44,15 @@ function App() {
         }
       </motion.button>
 
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/404" element={<NotFound />} />
-          <Route path="*" element={<Navigate to="/404" replace />} />
-        </Routes>
-      </AnimatePresence>
+      <div className="max-w-7xl mx-auto">
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404" replace />} />
+          </Routes>
+        </AnimatePresence>
+      </div>
 
       {/* Toast Container */}
       <ToastContainer
